@@ -74,12 +74,36 @@ export default function Home() {
         // Detect Electron and use bundled draw.io files for offline use
         // Note: react-drawio uses `new URL(baseUrl)` so we need absolute URL
         // Include /index.html because Next.js doesn't auto-serve index.html for directories
+
+        // const electronDetected =
+        //     !process.env.NEXT_PUBLIC_DRAWIO_BASE_URL &&
+        //     !!(window as unknown as { electronAPI?: unknown }).electronAPI
+        // if (electronDetected) {
+        //     setIsElectron(true)
+        //     setDrawioBaseUrl(`${window.location.origin}/drawio/index.html`)
+        // }
+
+        // 需要同时满足：① 没有设置自定义外网 URL 环境变量；② 全局对象中包含 Electron 注入的 API
         const electronDetected =
             !process.env.NEXT_PUBLIC_DRAWIO_BASE_URL &&
             !!(window as unknown as { electronAPI?: unknown }).electronAPI
+
         if (electronDetected) {
+            // 【分支 A：桌面客户端】使用应用内预置的本地 HTML 路径
             setIsElectron(true)
             setDrawioBaseUrl(`${window.location.origin}/drawio/index.html`)
+        } else {
+            // 【分支 B：所有 Web 浏览器端访问】
+            const envUrl = process.env.NEXT_PUBLIC_DRAWIO_BASE_URL
+
+            // 自动纠偏拦截逻辑：
+            // 满足以下任意一种情况时，强行使用当前浏览器的真实协议 + IP/域名 + 端口号重新拼装路径：
+            // 1. !envUrl：环境变量未配置或为空字符串
+            // 2. envUrl.includes("localhost")：构建阶段被硬编码/默认设置成了 localhost（云服务器公网访问主要死因）
+            // 3. envUrl.startsWith("/")：配置为了相对路径（避免 react-drawio 内部 new URL() 报 Invalid URL 错误）
+            if (!envUrl || envUrl.includes("localhost") || envUrl.startsWith("/")) {
+                setDrawioBaseUrl(`${window.location.origin}/draw.io/index.html`)
+            }
         }
 
         setIsLoaded(true)
