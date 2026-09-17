@@ -24,11 +24,11 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 
 # Build-time argument for self-hosted draw.io URL
-ARG NEXT_PUBLIC_DRAWIO_BASE_URL=https://embed.diagrams.net
+ARG NEXT_PUBLIC_DRAWIO_BASE_URL=http://localhost:3000/draw.io/index.html
 ENV NEXT_PUBLIC_DRAWIO_BASE_URL=${NEXT_PUBLIC_DRAWIO_BASE_URL}
 
 # Build-time argument to show About link and Notice icon
-ARG NEXT_PUBLIC_SHOW_ABOUT_AND_NOTICE=false
+ARG NEXT_PUBLIC_SHOW_ABOUT_AND_NOTICE=true
 ENV NEXT_PUBLIC_SHOW_ABOUT_AND_NOTICE=${NEXT_PUBLIC_SHOW_ABOUT_AND_NOTICE}
 
 # Build-time argument for subdirectory deployment (e.g., /nextaidrawio)
@@ -36,9 +36,9 @@ ARG NEXT_PUBLIC_BASE_PATH=""
 ENV NEXT_PUBLIC_BASE_PATH=${NEXT_PUBLIC_BASE_PATH}
 
 # Control sponsorship and self-hosting messaging in quota notifications.
-# Set NEXT_PUBLIC_SELFHOSTED="true" in self-hosted deployments to hide sponsorship/self-host links and related text in quota popups.
-ARG NEXT_PUBLIC_SELFHOSTED=""
-ENV NEXT_PUBLIC_SELFHOSTED="${NEXT_PUBLIC_SELFHOSTED}"
+# 直接设置为 "true"，隐藏官方赞助弹窗
+ARG NEXT_PUBLIC_SELFHOSTED="true"
+ENV NEXT_PUBLIC_SELFHOSTED=${NEXT_PUBLIC_SELFHOSTED}
 
 # Build Next.js application (standalone mode)
 RUN npm run build
@@ -73,4 +73,3 @@ ENV HOSTNAME="0.0.0.0"
 
 # Start the application (HOSTNAME override needed for AWS App Runner)
 CMD ["sh", "-c", "HOSTNAME=0.0.0.0 exec node server.js"]
-

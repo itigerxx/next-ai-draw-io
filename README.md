@@ -282,3 +282,6 @@ See [FAQ](./docs/en/FAQ.md) for common issues and solutions.
 [![Star History Chart](https://api.star-history.com/svg?repos=DayuanJiang/next-ai-draw-io&type=date&legend=top-left)](https://www.star-history.com/#DayuanJiang/next-ai-draw-io&type=date&legend=top-left)
 
 ---
+私有化部署说明
+将 https://github.com/jgraph/drawio/releases 中的v31.4.6版本的源码完整的放到了/public/draw.io路径下，这是本地私有化部署draw.io的基础
+后续改动可参考git log信息
