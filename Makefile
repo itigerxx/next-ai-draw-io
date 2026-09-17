@@ -31,31 +31,31 @@ build:
 # 2. 启动服务
 up:
 	@echo "--> 启动容器服务 ..."
-	docker-compose up -d
+	docker compose up -d
 
 # 3. 停止服务
 down:
 	@echo "--> 停止并删除容器 ..."
-	docker-compose down
+	docker compose down
 
 # 4. 恢复暂停的容器
 start:
 	@echo "--> 恢复运行容器服务 ..."
-	docker-compose start
+	docker compose start
 
 # 5. 暂停容器 (不销毁容器，配置不变)
 stop:
 	@echo "--> 暂停容器服务 ..."
-	docker-compose stop
+	docker compose stop
 
 # 6. 重启服务
 restart:
 	@echo "--> 重启容器 ..."
-	docker-compose restart
+	docker compose restart
 
 # 7. 查看日志
 logs:
-	docker-compose logs -f --tail=100
+	docker compose logs -f --tail=100
 
 # 8. 导出镜像包 (外网打好镜像后打包)
 save:
