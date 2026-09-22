@@ -725,13 +725,14 @@ Available libraries:
 - Enterprise: citrix, sap, mscae, atlassian
 - Engineering: fluidpower, electrical, pid, cabinets, floorplan
 - Icons: webicons
+- Custom: zybank
 
 Call this tool to get shape names and usage syntax for a specific library.`,
                 inputSchema: z.object({
                     library: z
                         .string()
                         .describe(
-                            "Library name (e.g., 'aws4', 'kubernetes', 'flowchart')",
+                            "Library name (e.g., 'aws4', 'kubernetes', 'flowchart', 'zybank')",
                         ),
                 }),
                 execute: async ({ library }) => {
@@ -766,7 +767,7 @@ Call this tool to get shape names and usage syntax for a specific library.`,
                         if (
                             (error as NodeJS.ErrnoException).code === "ENOENT"
                         ) {
-                            return `Library "${library}" not found. Available: aws4, azure2, gcp2, alibaba_cloud, cisco19, kubernetes, network, bpmn, flowchart, basic, arrows2, vvd, salesforce, citrix, sap, mscae, atlassian, fluidpower, electrical, pid, cabinets, floorplan, webicons, infographic, sitemap, android, material_design, lean_mapping, openstack, rack`
+                            return `Library "${library}" not found. Available: aws4, azure2, gcp2, alibaba_cloud, cisco19, kubernetes, network, bpmn, flowchart, basic, arrows2, vvd, salesforce, citrix, sap, mscae, atlassian, fluidpower, electrical, pid, cabinets, floorplan, webicons, infographic, sitemap, android, material_design, lean_mapping, openstack, rack, zybank`
                         }
                         console.error(
                             `[get_shape_library] Error loading "${library}":`,
