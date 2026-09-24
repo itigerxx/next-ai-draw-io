@@ -331,48 +331,51 @@ else
         {
             mxscript('js/app.min.js', function()
             {
-                mxScriptsLoaded = true;
-                checkAllLoaded();
-                
-                // Electron
-                if (mxIsElectron)
+                mxscript('js/zybank.js', function()
                 {
-                    mxscript('js/diagramly/DesktopLibrary.js', function()
+                    mxScriptsLoaded = true;
+                    checkAllLoaded();
+                
+                    // Electron
+                    if (mxIsElectron)
                     {
-                        mxscript('js/diagramly/ElectronApp.js', function()
+                        mxscript('js/diagramly/DesktopLibrary.js', function()
                         {
-                            mxscript('js/extensions.min.js', function()
+                            mxscript('js/diagramly/ElectronApp.js', function()
                             {
-                                mxscript('js/stencils.min.js', function()
+                                mxscript('js/extensions.min.js', function()
                                 {
-                                    mxscript('js/shapes-14-6-5.min.js', function()
+                                    mxscript('js/stencils.min.js', function()
                                     {
-                                        // ELK and Mermaid ship inside extensions.min.js
-                                        // above (elk bundle, then the ElkLayout editor
-                                        // statics, then mermaid). Loading
-                                        // js/elk/drawio-elk.min.js again would re-run its
-                                        // footer (var ElkLayout = ELK.ElkLayout) and swap
-                                        // in a bare class without the statics, breaking
-                                        // Arrange > Layout with "ElkLayout.runWithDialog
-                                        // is not a function" [jgraph/drawio-desktop#2471].
-                                        // Only PlantUML is not in extensions.min.js; it
-                                        // is preloaded here and EditorUi.loadPlantUml
-                                        // skips its own load once mxPlantUmlToDrawio is
-                                        // defined.
-                                        mxscript('js/plantuml/drawio-plantuml.min.js', function()
+                                        mxscript('js/shapes-14-6-5.min.js', function()
                                         {
-                                            mxscript('js/PostConfig.js');
+                                            // ELK and Mermaid ship inside extensions.min.js
+                                            // above (elk bundle, then the ElkLayout editor
+                                            // statics, then mermaid). Loading
+                                            // js/elk/drawio-elk.min.js again would re-run its
+                                            // footer (var ElkLayout = ELK.ElkLayout) and swap
+                                            // in a bare class without the statics, breaking
+                                            // Arrange > Layout with "ElkLayout.runWithDialog
+                                            // is not a function" [jgraph/drawio-desktop#2471].
+                                            // Only PlantUML is not in extensions.min.js; it
+                                            // is preloaded here and EditorUi.loadPlantUml
+                                            // skips its own load once mxPlantUmlToDrawio is
+                                            // defined.
+                                            mxscript('js/plantuml/drawio-plantuml.min.js', function()
+                                            {
+                                                mxscript('js/PostConfig.js');
+                                            });
                                         });
                                     });
                                 });
                             });
                         });
-                    });
-                }
-                else if (!supportedDomain)
-                {
-                    mxscript('js/PostConfig.js');
-                }
+                    }
+                    else if (!supportedDomain)
+                    {
+                        mxscript('js/PostConfig.js');
+                    }
+                });
             });
         };
         

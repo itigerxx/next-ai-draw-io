@@ -1,3 +1,4 @@
+````markdown
 # Next AI Draw.io
 
 <div align="center">
@@ -36,8 +37,8 @@ A Next.js web application that integrates AI capabilities with draw.io diagrams.
 https://github.com/user-attachments/assets/9d60a3e8-4a1c-4b5e-acbb-26af2d3eabd1
 
 
-
 ## Table of Contents
+
 - [Next AI Draw.io](#next-ai-drawio)
   - [Table of Contents](#table-of-contents)
   - [Examples](#examples)
@@ -103,14 +104,14 @@ Here are some example prompts and their generated diagrams:
 
 ## Features
 
--   **LLM-Powered Diagram Creation**: Leverage Large Language Models to create and manipulate draw.io diagrams directly through natural language commands
--   **Image-Based Diagram Replication**: Upload existing diagrams or images and have the AI replicate and enhance them automatically
--   **PDF & Text File Upload**: Upload PDF documents and text files to extract content and generate diagrams from existing documents
--   **AI Reasoning Display**: View the AI's thinking process for supported models (OpenAI o1/o3, Gemini, Claude, etc.)
--   **Diagram History**: Comprehensive version control that tracks all changes, allowing you to view and restore previous versions of your diagrams before the AI editing.
--   **Interactive Chat Interface**: Communicate with AI to refine your diagrams in real-time
--   **Cloud Architecture Diagram Support**: Specialized support for generating cloud architecture diagrams (AWS, GCP, Azure)
--   **Animated Connectors**: Create dynamic and animated connectors between diagram elements for better visualization
+- **LLM-Powered Diagram Creation**: Leverage Large Language Models to create and manipulate draw.io diagrams directly through natural language commands
+- **Image-Based Diagram Replication**: Upload existing diagrams or images and have the AI replicate and enhance them automatically
+- **PDF & Text File Upload**: Upload PDF documents and text files to extract content and generate diagrams from existing documents
+- **AI Reasoning Display**: View the AI's thinking process for supported models (OpenAI o1/o3, Gemini, Claude, etc.)
+- **Diagram History**: Comprehensive version control that tracks all changes, allowing you to view and restore previous versions of your diagrams before the AI editing.
+- **Interactive Chat Interface**: Communicate with AI to refine your diagrams in real-time
+- **Cloud Architecture Diagram Support**: Specialized support for generating cloud architecture diagrams (AWS, GCP, Azure)
+- **Animated Connectors**: Create dynamic and animated connectors between diagram elements for better visualization
 
 ## MCP Server
 
@@ -125,7 +126,7 @@ Use Next AI Draw.io with AI agents like Claude Desktop, Cursor, and VS Code via 
     }
   }
 }
-```
+````
 
 ### Claude Code CLI
 
@@ -134,6 +135,7 @@ claude mcp add drawio -- npx @next-ai-drawio/mcp-server@latest
 ```
 
 Then ask Claude to create diagrams:
+
 > "Create a flowchart showing user authentication with login, MFA, and session management"
 
 The diagram appears in your browser in real-time!
@@ -147,8 +149,6 @@ See the [MCP Server README](./packages/mcp-server/README.md) for VS Code, Cursor
 No installation needed! Try the app directly on our demo site:
 
 [![Live Demo](./public/live-demo-button.svg)](https://next-ai-drawio.jiang.jp/)
-
-
 
 > **Bring Your Own API Key**: You can use your own API key to bypass usage limits on the demo site. Click the Settings icon in the chat panel to configure your provider and API key. Your key is stored locally in your browser and is never stored on the server.
 
@@ -181,7 +181,7 @@ See the [Provider Configuration Guide](./docs/en/ai-providers.md) for detailed s
 npm run dev
 ```
 
-3. Open [http://localhost:6002](http://localhost:6002) in your browser to see the application.
+3. Open http://localhost:6002 in your browser to see the application.
 
 ## Deployment
 
@@ -189,7 +189,7 @@ npm run dev
 
 You can deploy with one click using [Tencent EdgeOne Pages](https://pages.edgeone.ai/).
 
-Deploy by this button: 
+Deploy by this button:
 
 [![Deploy to EdgeOne Pages](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?repository-url=https%3A%2F%2Fgithub.com%2FDayuanJiang%2Fnext-ai-draw-io)
 
@@ -197,9 +197,9 @@ Check out the [Tencent EdgeOne Pages documentation](https://pages.edgeone.ai/doc
 
 Additionally, deploying through Tencent EdgeOne Pages will also grant you a [daily free quota for DeepSeek models](https://pages.edgeone.ai/document/edge-ai).
 
-### Deploy on Vercel 
+### Deploy on Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDayuanJiang%2Fnext-ai-draw-io)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/DayuanJiang/next-ai-draw-io)
 
 The easiest way to deploy is using [Vercel](https://vercel.com/new), the creators of Next.js. Be sure to **set the environment variables** in the Vercel dashboard as you did in your local `.env.local` file.
 
@@ -209,27 +209,24 @@ See the [Next.js deployment documentation](https://nextjs.org/docs/app/building-
 
 [Go to Cloudflare Deploy Guide](./docs/en/cloudflare-deploy.md)
 
-
-
 ## Multi-Provider Support
 
--   [ByteDance Doubao](https://www.volcengine.com/activity/codingplan?ac=MMAP8JTTCAQ2&rc=Z9Z3LDTJ&utm_campaign=drawio&utm_content=drawio&utm_medium=devrel&utm_source=OWO&utm_term=drawio)
--   AWS Bedrock (default)
--   OpenAI
--   Anthropic
--   Google AI
--   Google Vertex AI
--   Azure OpenAI
--   Ollama
--   OpenRouter
--   AIHubMix
--   DeepSeek
--   SiliconFlow
--   ModelScope
--   SGLang
--   Vercel AI Gateway
--   [Atlas Cloud](https://www.atlascloud.ai/?utm_source=github&utm_medium=link&utm_campaign=next-ai-draw-io)
-
+* [ByteDance Doubao](https://www.volcengine.com/activity/codingplan?ac=MMAP8JTTCAQ2&rc=Z9Z3LDTJ&utm_campaign=drawio&utm_content=drawio&utm_medium=devrel&utm_source=OWO&utm_term=drawio)
+* AWS Bedrock (default)
+* OpenAI
+* Anthropic
+* Google AI
+* Google Vertex AI
+* Azure OpenAI
+* Ollama
+* OpenRouter
+* AIHubMix
+* DeepSeek
+* SiliconFlow
+* ModelScope
+* SGLang
+* Vercel AI Gateway
+* [Atlas Cloud](https://www.atlascloud.ai/?utm_source=github&utm_medium=link&utm_campaign=next-ai-draw-io)
 
 All providers except AWS Bedrock and OpenRouter support custom endpoints.
 
@@ -249,17 +246,15 @@ Set the `ADMIN_PASSWORD` environment variable and visit `/admin` to manage serve
 
 Note that the `claude` series has been trained on draw.io diagrams with cloud architecture logos like AWS, Azure, GCP. So if you want to create cloud architecture diagrams, this is the best choice.
 
-
 ## How It Works
 
 The application uses the following technologies:
 
--   **Next.js**: For the frontend framework and routing
--   **Vercel AI SDK** (`ai` + `@ai-sdk/*`): For streaming AI responses and multi-provider support
--   **react-drawio**: For diagram representation and manipulation
+* **Next.js**: For the frontend framework and routing
+* **Vercel AI SDK** (`ai` + `@ai-sdk/*`): For streaming AI responses and multi-provider support
+* **react-drawio**: For diagram representation and manipulation
 
 Diagrams are represented as XML that can be rendered in draw.io. The AI processes your commands and generates or modifies this XML accordingly.
-
 
 ## Support & Contact
 
@@ -271,7 +266,7 @@ If you find this project useful, please consider [sponsoring](https://github.com
 
 For support or inquiries, please open an issue on the GitHub repository or contact the maintainer at:
 
--   Email: me[at]jiang.jp
+* Email: me[at]jiang.jp
 
 ## FAQ
 
@@ -279,9 +274,140 @@ See [FAQ](./docs/en/FAQ.md) for common issues and solutions.
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=DayuanJiang/next-ai-draw-io&type=date&legend=top-left)](https://www.star-history.com/#DayuanJiang/next-ai-draw-io&type=date&legend=top-left)
+[![Star History Chart](https://api.star-history.com/svg?repos=DayuanJiang/next-ai-draw-io\&type=date\&legend=top-left)](https://www.star-history.com/#DayuanJiang/next-ai-draw-io&type=date&legend=top-left)
 
 ---
-私有化部署说明
-将 https://github.com/jgraph/drawio/releases 中的v31.4.6版本的源码完整的放到了/public/draw.io路径下，这是本地私有化部署draw.io的基础
-后续改动可参考git log信息
+
+## 私有化部署说明
+
+将 [Draw.io v31.4.6](https://github.com/jgraph/drawio/releases) 的发行包 `draw.war` 解压并完整放置到 `/public/draw.io` 路径下，这是本地私有化部署 Draw.io 的基础。
+
+后续对 Draw.io 的修改可参考 Git Log 信息。
+
+### Zybank 自定义图标侧边栏
+
+为了在内置的 Draw.io v31.4.6 基础上增加项目自有的 Zybank SVG 图标库，而不修改或重新编译 Draw.io 原有的 `app.min.js`，我们新增了 `js/zybank.js` 并调整了 `js/bootstrap.js` 的脚本加载顺序。
+
+`zybank.js` 基于 Draw.io 原生 `Sidebar` API，通过扩展 `Sidebar.prototype` 增加 `addZybankPalette()` 方法，并使用 `createVertexTemplateEntry()` 将 `public/zybank-icons/` 下的 `computer.svg`、`database.svg`、`mobile.svg`、`server.svg`、`user.svg` 和 `web-server.svg` 注册为一个名为 `Zybank` 的独立侧边栏图标分类。
+
+同时扩展 `Sidebar.prototype.initPalettes()`，在 Draw.io 初始化原有图标库后追加 Zybank 图标库。
+
+`bootstrap.js` 的修改是为了保证执行顺序：必须先加载 Draw.io 的 `app.min.js`，使 `Sidebar` 等核心对象和原生图标库完成加载，再加载 `zybank.js` 对 `Sidebar` 进行扩展，最后才执行 `App.main()` 完成 Draw.io 初始化。
+
+如果 `zybank.js` 在 `app.min.js` 之前执行，`Sidebar` 尚未定义，扩展会失败；如果在 `App.main()` 之后才加载，则 Draw.io 的侧边栏初始化可能已经完成，新增的 palette 不会参与首次初始化。
+
+因此最终加载关系为：
+
+```text
+app.min.js → zybank.js → App.main()
+```
+
+这种方式属于对 Draw.io 前端 Sidebar 的轻量扩展，不需要修改 Draw.io 核心代码、不需要重新构建 `app.min.js`，也不需要将 SVG 转换成 Base64。
+
+侧边栏中的图标直接通过 `image=/zybank-icons/*.svg` 引用 `public` 目录中的静态 SVG 文件。
+
+#### 后续新增图标分类
+
+如果后续需要增加其他分类，例如 `Network`、`Cloud`、`Payment` 等，不需要再次修改 `bootstrap.js`，只需要在 `zybank.js` 中增加对应的 Palette，并在 `initPalettes()` 中注册即可。
+
+例如新增一个 `Network` 分类：
+
+```javascript
+Sidebar.prototype.addNetworkPalette = function()
+{
+    var fns = [];
+
+    fns.push(
+        this.createVertexTemplateEntry(
+            'shape=image;html=1;image=/network-icons/router.svg;aspect=fixed;',
+            80,
+            80,
+            '',
+            'Router',
+            true,
+            null,
+            'network router gateway'
+        )
+    );
+
+    fns.push(
+        this.createVertexTemplateEntry(
+            'shape=image;html=1;image=/network-icons/switch.svg;aspect=fixed;',
+            80,
+            80,
+            '',
+            'Switch',
+            true,
+            null,
+            'network switch'
+        )
+    );
+
+    this.addPaletteFunctions(
+        'network',
+        'Network',
+        false,
+        fns
+    );
+};
+```
+
+然后在 `initPalettes()` 中增加：
+
+```javascript
+Sidebar.prototype.initPalettes = function()
+{
+    originalInitPalettes.apply(this, arguments);
+
+    this.addZybankPalette();
+    this.addNetworkPalette();
+};
+```
+
+这样 Draw.io 侧边栏中就会新增一个独立的 `Network` 分类。
+
+分类数量增加后，可以按照相同方式继续添加：
+
+```text
+Zybank
+Network
+Cloud
+Payment
+...
+```
+
+需要注意，**分类和 SVG 文件目录没有强绑定关系**。
+
+例如可以按照分类分别存放：
+
+```text
+public/
+├── zybank-icons/
+│   ├── computer.svg
+│   ├── database.svg
+│   └── ...
+│
+├── network-icons/
+│   ├── router.svg
+│   └── switch.svg
+│
+└── cloud-icons/
+    ├── cloud.svg
+    └── cdn.svg
+```
+
+也可以全部放在同一个 SVG 目录中。
+
+真正决定图标属于哪个 Draw.io 分类的是 `addPaletteFunctions()` 的注册位置，而不是 SVG 文件所在目录。
+
+因此，后续新增分类的步骤固定为：
+
+1. 将新的 SVG 文件放到 `public` 下。
+2. 在 `zybank.js` 中创建对应的 `addXXXPalette()`。
+3. 使用 `createVertexTemplateEntry()` 注册该分类中的 SVG。
+4. 使用 `addPaletteFunctions()` 指定分类 ID 和显示名称。
+5. 在 `initPalettes()` 中调用新的 `addXXXPalette()`。
+6. **无需修改 `bootstrap.js`**。
+
+```
+```
